@@ -214,8 +214,70 @@ app.delete('/notes/:id', (req, res) => {
     res.send('');
 });
 
+// JSON API エンドポイント（Vanilla JS版用）
+app.get('/api/notes', (req, res) => {
+    res.json(notes);
+});
+
+app.post('/api/notes', (req, res) => {
+    const { title, content } = req.body;
+    
+    const newNote = {
+        id: nextId++,
+        title,
+        content,
+        createdAt: new Date()
+    };
+    
+    notes.unshift(newNote);
+    res.json(newNote);
+});
+
+app.get('/api/notes/:id', (req, res) => {
+    const noteId = parseInt(req.params.id);
+    const note = notes.find(n => n.id === noteId);
+    
+    if (!note) {
+        return res.status(404).json({ error: 'メモが見つかりません' });
+    }
+    
+    res.json(note);
+});
+
+app.put('/api/notes/:id', (req, res) => {
+    const noteId = parseInt(req.params.id);
+    const { title, content } = req.body;
+    const noteIndex = notes.findIndex(n => n.id === noteId);
+    
+    if (noteIndex === -1) {
+        return res.status(404).json({ error: 'メモが見つかりません' });
+    }
+    
+    notes[noteIndex] = { ...notes[noteIndex], title, content };
+    res.json(notes[noteIndex]);
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+    const noteId = parseInt(req.params.id);
+    const originalLength = notes.length;
+    notes = notes.filter(n => n.id !== noteId);
+    
+    if (notes.length === originalLength) {
+        return res.status(404).json({ error: 'メモが見つかりません' });
+    }
+    
+    res.json({ success: true });
+});
+
+// Vanilla JS版のルート
+app.get('/vanilla', (req, res) => {
+    res.sendFile(path.join(__dirname, 'vanilla.html'));
+});
+
 // サーバーを起動する
 app.listen(PORT, () => {
     console.log(`サーバーがポート${PORT}で起動しました`);
     console.log(`http://localhost:${PORT} でアクセスできます`);
+    console.log(`HTMX版: http://localhost:${PORT}`);
+    console.log(`Vanilla JS版: http://localhost:${PORT}/vanilla`);
 });

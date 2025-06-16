@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTMXメモ帳</title>
-    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Vanilla JS メモ帳</title>
+    <link rel="stylesheet" href="vanilla-style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>メモ帳 (HTMX)</h1>
+            <h1>メモ帳 (Vanilla JavaScript)</h1>
             <nav>
-                <a href="/" class="nav-btn active">HTMX版</a>
-                <a href="/vanilla" class="nav-btn">Vanilla JS版</a>
+                <a href="/" class="nav-btn">HTMX版</a>
+                <a href="/vanilla" class="nav-btn active">Vanilla JS版</a>
             </nav>
         </header>
         
         <main>
             <section class="note-form">
-                <form hx-post="/notes" hx-target="#notes-list" hx-swap="afterbegin">
+                <form id="note-form">
                     <div class="form-group">
-                        <input type="text" name="title" placeholder="タイトル" required>
+                        <input type="text" id="title" placeholder="タイトル" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="content" placeholder="メモの内容を入力してください..." rows="4" required></textarea>
+                        <textarea id="content" placeholder="メモの内容を入力してください..." rows="4" required></textarea>
                     </div>
                     <button type="submit">追加</button>
                 </form>
@@ -32,11 +31,13 @@
             
             <section class="notes">
                 <h2>メモ一覧</h2>
-                <div id="notes-list" hx-get="/notes" hx-trigger="load">
+                <div id="notes-list">
                     <div class="loading">読み込み中...</div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script src="vanilla-script.js"></script>
 </body>
 </html>
