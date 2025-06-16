@@ -1,210 +1,244 @@
+/* CSSリセット：全ての要素のマージン、パディングをリセット */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* パディングとボーダーを含めたサイズ計算 */
 }
 
+/* ページ全体のスタイル */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* フォントファミリー設定 */
+    line-height: 1.6;      /* 行間設定 */
+    color: #333;           /* テキストの基本色 */
+    background-color: #f5f5f5; /* 背景色（ライトグレー） */
 }
 
+/* メインコンテナのスタイル */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 800px;  /* 最大幅を800pxに制限 */
+    margin: 0 auto;    /* 中央寄せ */
+    padding: 20px;     /* 内側の余白 */
 }
 
+/* ヘッダー部分のスタイル */
 header {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: center;    /* テキストを中央揃え */
+    margin-bottom: 30px;   /* 下方の余白 */
 }
 
+/* メインタイトルのスタイル */
 header h1 {
-    color: #2c3e50;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    color: #2c3e50;        /* タイトルの色（ダークブルー） */
+    font-size: 2.5rem;     /* フォントサイズ */
+    margin-bottom: 10px;   /* 下方の余白 */
 }
 
+/* メモ追加フォームのスタイル */
 .note-form {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+    background: white;     /* 背景色を白に */
+    padding: 25px;         /* 内側の余白 */
+    border-radius: 10px;   /* 角を丸く */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 影を付けて立体感を演出 */
+    margin-bottom: 30px;   /* 下方の余白 */
 }
 
+/* フォームグループのスタイル */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px;   /* 各フォーム要素間の余白 */
 }
 
+/* 入力フィールドのスタイル */
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+    width: 100%;           /* 幅を100%に */
+    padding: 12px;         /* 内側の余白 */
+    border: 2px solid #ddd; /* ボーダーの設定 */
+    border-radius: 6px;    /* 角を丸く */
+    font-size: 16px;       /* フォントサイズ */
+    transition: border-color 0.3s; /* ボーダー色変化のアニメーション */
 }
 
+/* 入力フィールドにフォーカスが当たった時のスタイル */
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: #3498db;
+    outline: none;         /* ブラウザデフォルトのアウトラインを非表示 */
+    border-color: #3498db; /* フォーカス時は青色のボーダー */
 }
 
+/* ボタンの基本スタイル */
 button {
-    background: #3498db;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    background: #3498db;   /* 背景色（ブルー） */
+    color: white;          /* テキスト色 */
+    padding: 12px 24px;    /* 内側の余白 */
+    border: none;          /* ボーダーを非表示 */
+    border-radius: 6px;    /* 角を丸く */
+    cursor: pointer;       /* マウスカーソルをポインターに */
+    font-size: 16px;       /* フォントサイズ */
+    transition: background-color 0.3s; /* 背景色変化のアニメーション */
 }
 
+/* ボタンにホバーした時のスタイル */
 button:hover {
-    background: #2980b9;
+    background: #2980b9;   /* より濃い青色に変化 */
 }
 
+/* メモ一覧セクションのタイトル */
 .notes h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+    color: #2c3e50;        /* タイトルの色 */
+    margin-bottom: 20px;   /* 下方の余白 */
+    font-size: 1.8rem;     /* フォントサイズ */
 }
 
+/* 個別のメモアイテムのスタイル */
 .note-item {
-    background: white;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background: white;     /* 背景色 */
+    padding: 20px;         /* 内側の余白 */
+    margin-bottom: 15px;   /* 下方の余白 */
+    border-radius: 10px;   /* 角を丸く */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 影を付けて立体感を演出 */
+    transition: transform 0.2s, box-shadow 0.2s; /* ホバーアニメーションの設定 */
 }
 
+/* メモアイテムにホバーした時のエフェクト */
 .note-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px); /* 少し上に浮かす */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* 影を濃くして浮き上がった感じを演出 */
 }
 
+/* メモのヘッダー部分（タイトルとボタン） */
 .note-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    display: flex;             /* フレックスボックスレイアウト */
+    justify-content: space-between; /* 両端揃え */
+    align-items: center;       /* 垂直中央揃え */
+    margin-bottom: 10px;       /* 下方の余白 */
 }
 
+/* メモのタイトル */
 .note-header h3 {
-    color: #2c3e50;
-    font-size: 1.3rem;
-    margin: 0;
+    color: #2c3e50;            /* タイトルの色 */
+    font-size: 1.3rem;         /* フォントサイズ */
+    margin: 0;                 /* マージンをリセット */
 }
 
+/* メモのアクションボタンコンテナ */
 .note-actions {
-    display: flex;
-    gap: 8px;
+    display: flex;             /* フレックスボックスレイアウト */
+    gap: 8px;                  /* ボタン間の間隔 */
 }
 
+/* アクションボタンの共通スタイル */
 .edit-btn, .delete-btn, .save-btn, .cancel-btn {
-    padding: 6px 12px;
-    font-size: 14px;
-    border-radius: 4px;
+    padding: 6px 12px;         /* 小さめのパディング */
+    font-size: 14px;           /* 小さめのフォントサイズ */
+    border-radius: 4px;        /* 小さめの角丸 */
 }
 
+/* 編集ボタンのスタイル */
 .edit-btn {
-    background: #f39c12;
+    background: #f39c12;       /* オレンジ色 */
 }
 
 .edit-btn:hover {
-    background: #e67e22;
+    background: #e67e22;       /* ホバー時はより濃いオレンジ */
 }
 
+/* 削除ボタンのスタイル */
 .delete-btn {
-    background: #e74c3c;
+    background: #e74c3c;       /* 赤色 */
 }
 
 .delete-btn:hover {
-    background: #c0392b;
+    background: #c0392b;       /* ホバー時はより濃い赤 */
 }
 
+/* 保存ボタンのスタイル */
 .save-btn {
-    background: #27ae60;
+    background: #27ae60;       /* 緑色 */
 }
 
 .save-btn:hover {
-    background: #229954;
+    background: #229954;       /* ホバー時はより濃い緑 */
 }
 
+/* キャンセルボタンのスタイル */
 .cancel-btn {
-    background: #95a5a6;
+    background: #95a5a6;       /* グレー色 */
 }
 
 .cancel-btn:hover {
-    background: #7f8c8d;
+    background: #7f8c8d;       /* ホバー時はより濃いグレー */
 }
 
+/* メモの内容テキスト */
 .note-content p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
+    color: #555;               /* テキストの色（少し薄いグレー） */
+    line-height: 1.6;          /* 行間 */
+    margin-bottom: 10px;       /* 下方の余白 */
+    white-space: pre-wrap;     /* 改行やスペースを保持 */
 }
 
+/* メモの作成日時表示 */
 .note-date {
-    color: #888;
-    font-size: 0.9rem;
-    text-align: right;
+    color: #888;               /* 淡いグレー色 */
+    font-size: 0.9rem;         /* 小さめのフォント */
+    text-align: right;         /* 右寄せ */
 }
 
+/* 編集フォームの特別スタイル */
 .edit-form {
-    border: 2px solid #3498db;
+    border: 2px solid #3498db; /* 編集中であることを示す青いボーダー */
 }
 
+/* 編集フォームのアクションボタンコンテナ */
 .form-actions {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
+    display: flex;             /* フレックスボックスレイアウト */
+    gap: 10px;                 /* ボタン間の間隔 */
+    justify-content: flex-end; /* 右寄せ */
 }
 
+/* 読み込み中の表示 */
 .loading {
-    text-align: center;
-    color: #888;
-    padding: 20px;
+    text-align: center;        /* 中央揃え */
+    color: #888;               /* グレー色 */
+    padding: 20px;             /* 余白 */
 }
 
+/* エラーメッセージのスタイル */
 .error {
-    background: #e74c3c;
-    color: white;
-    padding: 10px;
-    border-radius: 6px;
-    text-align: center;
+    background: #e74c3c;       /* 赤い背景 */
+    color: white;              /* 白いテキスト */
+    padding: 10px;             /* 内側の余白 */
+    border-radius: 6px;        /* 角を丸く */
+    text-align: center;        /* 中央揃え */
 }
 
+/* モバイル端末向けのレスポンシブデザイン */
 @media (max-width: 600px) {
+    /* コンテナのパディングを小さく */
     .container {
         padding: 10px;
     }
     
+    /* メモヘッダーを縦並びに変更 */
     .note-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: column;    /* 縦並び */
+        align-items: flex-start;   /* 左寄せ */
+        gap: 10px;                 /* 要素間の間隔 */
     }
     
+    /* アクションボタンを右寄せ */
     .note-actions {
-        width: 100%;
-        justify-content: flex-end;
+        width: 100%;               /* 幅を100%に */
+        justify-content: flex-end; /* 右寄せ */
     }
     
+    /* フォームアクションを縦並びに */
     .form-actions {
-        flex-direction: column;
+        flex-direction: column;    /* 縦並び */
     }
     
+    /* ボタンをフル幅に */
     .edit-btn, .delete-btn, .save-btn, .cancel-btn {
-        width: 100%;
+        width: 100%;               /* 幅を100%に */
     }
 }
